@@ -4,12 +4,19 @@ import userRouter from "./routes/userRouter.js";
 import productRouter from "./routes/productRoute.js";
 import dotenv from "dotenv";
 import orderRouter from "./routes/orderRouter.js";
+import cors from "cors";
 dotenv.config();
 
 const app = express();
 
+const corsOptions = {
+  origin: "http://localhost:3000", 
+  optionsSuccessStatus: 200,
+};
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors(corsOptions))
 
 // userRouter
 app.use("/api/users", userRouter);

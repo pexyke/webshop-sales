@@ -23,9 +23,46 @@ productRouter.get(
 );
 
 productRouter.get(
+  "/id/:id",
+  expressAsyncHandler(async (req, res) => {
+    const product = await Product.find({id: req.params.id});
+    console.log(req.params.id);
+    if (product) {
+      res.send(product);
+    } else {
+      res.status(404).send({ message: "Product Not Found" });
+    }
+  })
+);
+
+productRouter.get(
   "/:id",
   expressAsyncHandler(async (req, res) => {
     const product = await Product.findById(req.params.id);
+    console.log(req.params.id);
+    if (product) {
+      res.send(product);
+    } else {
+      res.status(404).send({ message: "Product Not Found" });
+    }
+  })
+);
+
+productRouter.post(
+  "/:id",
+  expressAsyncHandler(async (req, res) => {
+    const filter = { id: req.params.id };
+    const update = { 
+        name: req.body.name,
+        category: req.body.category,
+        image: req.body.image,
+        price: req.body.price,
+        countInstock: req.body.countInstock,
+        rating: req.body.rating,
+        numReviews: req.body.numReviews,
+        description: req.body.description,
+     };
+    const product = await Product.findOneAndUpdate(filter, update);
     console.log(req.params.id);
     if (product) {
       res.send(product);

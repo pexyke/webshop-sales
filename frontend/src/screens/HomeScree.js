@@ -16,7 +16,7 @@ function HomeScreen(props) {
   return (
     <div className="container">
       <div className="article">
-        <h2>Featured Product</h2>
+        <h2>Termékek</h2>
         <div className="allMixer">
           {loading ? (
             <LoadingBox></LoadingBox>

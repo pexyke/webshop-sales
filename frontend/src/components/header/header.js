@@ -19,17 +19,17 @@ function Header(props) {
           <ul>
             <li>
               <Link to="/" id="MenuActive">
-                home
+                Főoldal
               </Link>
             </li>
             <li>
-              <Link to="/shop">shop</Link>
+              <Link to="/">Termékek</Link>
             </li>
             <li>
-              <Link to="/blog">blogs</Link>
+              <Link to="/blog">Blog</Link>
             </li>
             <li>
-              <Link to="/contact">contact</Link>
+              <Link to="/contact">Kapcsolat</Link>
             </li>
           </ul>
         </div>
@@ -55,8 +55,8 @@ function Header(props) {
               </i>
             </Link>
             <div className="buttonsPrice">
-              item: ({cartItems.reduce((a, c) => a + c.qty, 0)})
-              <span>${cartItems.reduce((a, c) => a + c.price * c.qty, 0)}</span>
+              termék: ({cartItems.reduce((a, c) => a + c.qty, 0)})
+              <span>{cartItems.reduce((a, c) => a + c.price * c.qty, 0)} Ft</span>
             </div>
           </div>
         </div>

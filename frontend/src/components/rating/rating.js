@@ -9,7 +9,7 @@ function Rating(props) {
       <i className={rating >= 3 ? "fa fa-star" : "fas fa-star-half-alt"}></i>
       <i className={rating >= 4 ? "fa fa-star" : "fas fa-star-half-alt"}></i>
       <i className={rating >= 5 ? "fa fa-star" : "fas fa-star-half-alt"}></i>
-      <span>({numReviews} reviews)</span>
+      <span>({numReviews} értékelés)</span>
     </div>
   );
 }

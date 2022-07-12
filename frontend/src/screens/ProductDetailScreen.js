@@ -24,9 +24,9 @@ function ProductDetailScreen(props) {
   return (
     <>
       <div className="top">
-        <h2>Product Details</h2>
+        <h2>{product?.name} részletei</h2>
         <p>
-          <Link to="/">Home</Link> - <span>Product Details</span>
+          <Link to="/">Főoldal</Link> - <span>Részletek</span>
         </p>
       </div>
 
@@ -51,7 +51,7 @@ function ProductDetailScreen(props) {
                     numReviews={product.numReviews}
                   />
                   <div className="product__details__price">
-                    ${product.price}
+                    {product.price} Ft
                   </div>
                   <p>{product.description}</p>
 
@@ -75,34 +75,34 @@ function ProductDetailScreen(props) {
                         </div>
                       </div>
                       <button onClick={handleToCart} className="primary-btn">
-                        ADD TO CART
+                        KOSÁRBA
                       </button>
-                      <span className="heart-icon">
+                      {/* <span className="heart-icon">
                         <i className="far fa-heart"></i>
-                      </span>
+                      </span> */}
                     </>
                   )}
 
                   <ul>
                     <li>
-                      <b>Availability</b>
+                      <b>Elérhetőség</b>
                       {product.countInstock > 0 ? (
-                        <span>In Stock</span>
+                        <span>Raktáron</span>
                       ) : (
-                        <span>unavailable</span>
+                        <span>Nem elérhető</span>
                       )}
                     </li>
                     <li>
-                      <b>Shipping</b>{" "}
+                      <b>Szállítás</b>{" "}
                       <span>
-                        01 day shipping. <samp>Free pickup today</samp>
+                        1 napon belül.
                       </span>
                     </li>
                     <li>
-                      <b>Weight</b> <span>0.5 kg</span>
+                      <b>Súly</b> <span>0.5 kg</span>
                     </li>
                     <li>
-                      <b>Share on</b>
+                      <b>Megosztás</b>
                       <div className="share">
                         <Link to="">
                           <i className="fab fa-facebook-f"></i>

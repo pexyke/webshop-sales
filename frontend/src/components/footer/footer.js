@@ -8,40 +8,28 @@ function Footer(props) {
         <div className="footerInside">
           <div className="footerNav">
             <p>
-              <Link to="/">Home</Link>
+              <Link to="/">Főoldal</Link>
             </p>
             <p>
-              <Link to="/contact">contact us</Link>
+              <Link to="/contact">Rólunk</Link>
             </p>
             <p>
-              <Link to="/shop">shop</Link>
+              <Link to="/">Termékek</Link>
             </p>
           </div>
           <div className="footerNav">
             <p>
-              <Link to="/cart">shopping cart</Link>
+              <Link to="/cart">Kosár</Link>
             </p>
             <p>
-              <Link to="/blog">blog details</Link>
-            </p>
-            <p>
-              <Link to="/blog">blogs</Link>
-            </p>
+              <Link to="/blog">blog</Link>
+            </p>            
           </div>
-          <div className="send-email">
-            <p>you need news?</p>
-            <p>send email</p>
-            <p> for newsletter</p>
-            <p>you need news?</p>
+          <div className="send-email">            
+            <p>Feliratkozáshoz</p>
+            <p>küldjön e-mailt</p>
           </div>
           <div className="footerMedia">
-            <p>certification & alliences </p>
-            <div className="footerMediaImg">
-              <img
-                src="https://funmasteracademy.com/wp-content/uploads/2018/05/iso-9001-1.png"
-                alt=""
-              />
-            </div>
           </div>
         </div>
       </div>

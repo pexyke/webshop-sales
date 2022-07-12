@@ -25,7 +25,7 @@ function Product(props) {
         <p>
           <Link to={`products/${product._id}`}>{product.name}</Link>
         </p>
-        <h3>${product.price}</h3>
+        <h3>{product.price} Ft</h3>
       </div>
     </div>
   );

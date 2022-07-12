@@ -5,6 +5,10 @@ import productRouter from "./routes/productRoute.js";
 import dotenv from "dotenv";
 import orderRouter from "./routes/orderRouter.js";
 import cors from "cors";
+import swaggerUi from 'swagger-ui-express';
+import { readFile } from 'fs/promises';
+const swaggerDocument = JSON.parse(await readFile(new URL('./swagger.json', import.meta.url)));
+
 dotenv.config();
 
 const app = express();
@@ -34,6 +38,12 @@ app.get("/api/config/paypal", (req, res) => {
 app.get("/", (req, res) => {
   res.send("Server is ready and port runing");
 });
+
+app.use(
+  '/swagger',
+  swaggerUi.serve, 
+  swaggerUi.setup(swaggerDocument)
+);
 
 app.listen(1000, () => {
   console.log("Server at http://localhost:1000");
